@@ -7,11 +7,11 @@ class Player
     @isdead = false
   end
 
-  def show_state
+  def state
     puts "#{@name} a #{@health} points de vie"
   end
 
-  def gets_damage(damage)
+  def damage(damage)
     if @isdead == true
       puts "#{@name} est déjà mort"
     elsif (@health - damage) <= 0
@@ -22,9 +22,9 @@ class Player
     end
   end
 
-  def attacks(player)
+  def attack(player)
     damage = rand(1..4)
-    player.gets_damage(damage)
+    player.damage(damage)
     puts "#{@name} inflige #{damage} de dégats a #{player.name}"
   end
 end
